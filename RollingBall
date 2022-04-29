@@ -1,0 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Constantmove : MonoBehaviour
+{
+   private  Rigidbody rb;
+    private float speed = 10f;
+    
+    private float movementX;
+    private float movementZ;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+       
+    }
+    private void onMove()
+    {
+       
+        
+    }
+    private void FixedUpdate()
+    {
+        movementX = Input.GetAxis("Horizontal");
+        movementZ = Input.GetAxis("Vertical");
+        Vector3 movementVector = new Vector3(movementX, 0f, movementZ);
+        rb.AddForce(movementVector * speed);
+    }
+
+}
